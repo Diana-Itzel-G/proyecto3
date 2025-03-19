@@ -1,0 +1,10 @@
+C:\Users\luzes\source\repos\enfoca-Tec\Evento\bin\Debug\Evento.exe.config
+C:\Users\luzes\source\repos\enfoca-Tec\Evento\bin\Debug\Evento.exe
+C:\Users\luzes\source\repos\enfoca-Tec\Evento\bin\Debug\Evento.pdb
+C:\Users\luzes\source\repos\enfoca-Tec\Evento\obj\Debug\Evento.csproj.AssemblyReference.cache
+C:\Users\luzes\source\repos\enfoca-Tec\Evento\obj\Debug\Evento.Properties.Resources.resources
+C:\Users\luzes\source\repos\enfoca-Tec\Evento\obj\Debug\Evento.csproj.GenerateResource.cache
+C:\Users\luzes\source\repos\enfoca-Tec\Evento\obj\Debug\Evento.csproj.CoreCompileInputs.cache
+C:\Users\luzes\source\repos\enfoca-Tec\Evento\obj\Debug\Evento.exe
+C:\Users\luzes\source\repos\enfoca-Tec\Evento\obj\Debug\Evento.pdb
+C:\Users\luzes\source\repos\enfoca-Tec\Evento\obj\Debug\Evento.Eventos1.resources

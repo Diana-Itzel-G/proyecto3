@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "Nuevo perfil",
+    "Projects": [
+      {
+        "Path": "iniciarSesion\\iniciarSesion.csproj",
+        "Action": "StartWithoutDebugging"
+      },
+      {
+        "Path": "Registro\\Registro.csproj",
+        "Action": "StartWithoutDebugging"
+      }
+    ]
+  }
+]

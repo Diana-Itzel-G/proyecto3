@@ -1,0 +1,14 @@
+C:\Users\luzes\source\repos\enfoca-Tec\Agenda\bin\Debug\Agenda.exe.config
+C:\Users\luzes\source\repos\enfoca-Tec\Agenda\bin\Debug\Agenda.exe
+C:\Users\luzes\source\repos\enfoca-Tec\Agenda\bin\Debug\Agenda.pdb
+C:\Users\luzes\source\repos\enfoca-Tec\Agenda\obj\Debug\Agenda.csproj.AssemblyReference.cache
+C:\Users\luzes\source\repos\enfoca-Tec\Agenda\obj\Debug\Agenda.Properties.Resources.resources
+C:\Users\luzes\source\repos\enfoca-Tec\Agenda\obj\Debug\Agenda.csproj.GenerateResource.cache
+C:\Users\luzes\source\repos\enfoca-Tec\Agenda\obj\Debug\Agenda.csproj.CoreCompileInputs.cache
+C:\Users\luzes\source\repos\enfoca-Tec\Agenda\obj\Debug\Agenda.exe
+C:\Users\luzes\source\repos\enfoca-Tec\Agenda\obj\Debug\Agenda.pdb
+C:\Users\luzes\source\repos\enfoca-Tec\Agenda\obj\Debug\Agenda.FechaAct.resources
+C:\Users\luzes\source\repos\enfoca-Tec\Agenda\bin\Debug\Evento.exe
+C:\Users\luzes\source\repos\enfoca-Tec\Agenda\bin\Debug\Evento.pdb
+C:\Users\luzes\source\repos\enfoca-Tec\Agenda\bin\Debug\Evento.exe.config
+C:\Users\luzes\source\repos\enfoca-Tec\Agenda\obj\Debug\Agenda.csproj.Up2Date

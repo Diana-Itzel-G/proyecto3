@@ -1,0 +1,10 @@
+C:\Users\luzes\source\repos\enfoca-Tec\Registro\bin\Debug\Registro.exe.config
+C:\Users\luzes\source\repos\enfoca-Tec\Registro\bin\Debug\Registro.exe
+C:\Users\luzes\source\repos\enfoca-Tec\Registro\bin\Debug\Registro.pdb
+C:\Users\luzes\source\repos\enfoca-Tec\Registro\obj\Debug\Registro.csproj.AssemblyReference.cache
+C:\Users\luzes\source\repos\enfoca-Tec\Registro\obj\Debug\Registro.Properties.Resources.resources
+C:\Users\luzes\source\repos\enfoca-Tec\Registro\obj\Debug\Registro.csproj.GenerateResource.cache
+C:\Users\luzes\source\repos\enfoca-Tec\Registro\obj\Debug\Registro.csproj.CoreCompileInputs.cache
+C:\Users\luzes\source\repos\enfoca-Tec\Registro\obj\Debug\Registro.exe
+C:\Users\luzes\source\repos\enfoca-Tec\Registro\obj\Debug\Registro.pdb
+C:\Users\luzes\source\repos\enfoca-Tec\Registro\obj\Debug\Registro.Registrarse.resources
