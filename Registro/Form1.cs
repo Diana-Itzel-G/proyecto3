@@ -139,7 +139,7 @@ namespace Registro
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            AgregarBordeRedondeadoBoton(btnGuardar);
+            AgregarBordeRedondeadoBoton(btnCancelar);
 
             // Aquí puedes agregar el código para cancelar la operación
             this.Close(); // Cierra el formulario actual
@@ -265,6 +265,11 @@ namespace Registro
                 e.Graphics.SmoothingMode = SmoothingMode.AntiAlias; // Mejorar la calidad del dibujo
                 e.Graphics.DrawPath(pen, path); // Dibujar el borde
             }
+
+        }
+
+        private void lbControl_Click(object sender, EventArgs e)
+        {
 
         }
     }

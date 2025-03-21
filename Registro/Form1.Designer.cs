@@ -77,9 +77,9 @@
             this.txtPin.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPin.Location = new System.Drawing.Point(229, 257);
+            this.txtPin.Location = new System.Drawing.Point(245, 261);
             this.txtPin.Name = "txtPin";
-            this.txtPin.Size = new System.Drawing.Size(100, 20);
+            this.txtPin.Size = new System.Drawing.Size(138, 20);
             this.txtPin.TabIndex = 12;
             this.txtPin.TextChanged += new System.EventHandler(this.txtPin_TextChanged);
             // 
@@ -88,9 +88,9 @@
             this.txtCorreo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCorreo.Location = new System.Drawing.Point(229, 218);
+            this.txtCorreo.Location = new System.Drawing.Point(245, 222);
             this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(100, 20);
+            this.txtCorreo.Size = new System.Drawing.Size(138, 20);
             this.txtCorreo.TabIndex = 11;
             this.txtCorreo.TextChanged += new System.EventHandler(this.txtCorreo_TextChanged);
             // 
@@ -99,9 +99,9 @@
             this.txttelefono.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txttelefono.Location = new System.Drawing.Point(229, 180);
+            this.txttelefono.Location = new System.Drawing.Point(245, 184);
             this.txttelefono.Name = "txttelefono";
-            this.txttelefono.Size = new System.Drawing.Size(100, 20);
+            this.txttelefono.Size = new System.Drawing.Size(138, 20);
             this.txttelefono.TabIndex = 10;
             this.txttelefono.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
@@ -110,9 +110,9 @@
             this.txtControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtControl.Location = new System.Drawing.Point(229, 142);
+            this.txtControl.Location = new System.Drawing.Point(245, 146);
             this.txtControl.Name = "txtControl";
-            this.txtControl.Size = new System.Drawing.Size(100, 20);
+            this.txtControl.Size = new System.Drawing.Size(138, 20);
             this.txtControl.TabIndex = 9;
             this.txtControl.TextChanged += new System.EventHandler(this.txtControl_TextChanged);
             // 
@@ -121,9 +121,9 @@
             this.txtClientes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtClientes.Location = new System.Drawing.Point(229, 102);
+            this.txtClientes.Location = new System.Drawing.Point(245, 106);
             this.txtClientes.Name = "txtClientes";
-            this.txtClientes.Size = new System.Drawing.Size(100, 20);
+            this.txtClientes.Size = new System.Drawing.Size(138, 20);
             this.txtClientes.TabIndex = 8;
             this.txtClientes.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -157,11 +157,12 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbCliente.AutoSize = true;
-            this.lbCliente.Location = new System.Drawing.Point(129, 109);
+            this.lbCliente.Font = new System.Drawing.Font("MS UI Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCliente.Location = new System.Drawing.Point(105, 109);
             this.lbCliente.Name = "lbCliente";
-            this.lbCliente.Size = new System.Drawing.Size(43, 13);
+            this.lbCliente.Size = new System.Drawing.Size(60, 13);
             this.lbCliente.TabIndex = 6;
-            this.lbCliente.Text = "Usuario";
+            this.lbCliente.Text = "Usuario:";
             // 
             // lbControl
             // 
@@ -169,11 +170,13 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbControl.AutoSize = true;
-            this.lbControl.Location = new System.Drawing.Point(129, 149);
+            this.lbControl.Font = new System.Drawing.Font("MS UI Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbControl.Location = new System.Drawing.Point(105, 146);
             this.lbControl.Name = "lbControl";
             this.lbControl.Size = new System.Drawing.Size(95, 13);
             this.lbControl.TabIndex = 5;
-            this.lbControl.Text = "Numero de Control";
+            this.lbControl.Text = "N de Control:";
+            this.lbControl.Click += new System.EventHandler(this.lbControl_Click);
             // 
             // lbTelefono
             // 
@@ -181,11 +184,12 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbTelefono.AutoSize = true;
-            this.lbTelefono.Location = new System.Drawing.Point(129, 183);
+            this.lbTelefono.Font = new System.Drawing.Font("MS UI Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTelefono.Location = new System.Drawing.Point(105, 184);
             this.lbTelefono.Name = "lbTelefono";
-            this.lbTelefono.Size = new System.Drawing.Size(49, 13);
+            this.lbTelefono.Size = new System.Drawing.Size(69, 13);
             this.lbTelefono.TabIndex = 4;
-            this.lbTelefono.Text = "Telefono";
+            this.lbTelefono.Text = "Telefono:";
             // 
             // lbCorreo
             // 
@@ -193,11 +197,12 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbCorreo.AutoSize = true;
-            this.lbCorreo.Location = new System.Drawing.Point(129, 225);
+            this.lbCorreo.Font = new System.Drawing.Font("MS UI Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCorreo.Location = new System.Drawing.Point(105, 222);
             this.lbCorreo.Name = "lbCorreo";
-            this.lbCorreo.Size = new System.Drawing.Size(94, 13);
+            this.lbCorreo.Size = new System.Drawing.Size(138, 13);
             this.lbCorreo.TabIndex = 3;
-            this.lbCorreo.Text = "Correo Electronico";
+            this.lbCorreo.Text = "Correo Electronico:";
             this.lbCorreo.Click += new System.EventHandler(this.label2_Click);
             // 
             // lbPin
@@ -206,17 +211,20 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbPin.AutoSize = true;
-            this.lbPin.Location = new System.Drawing.Point(129, 264);
+            this.lbPin.Font = new System.Drawing.Font("MS UI Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPin.Location = new System.Drawing.Point(105, 261);
             this.lbPin.Name = "lbPin";
-            this.lbPin.Size = new System.Drawing.Size(61, 13);
+            this.lbPin.Size = new System.Drawing.Size(86, 13);
             this.lbPin.TabIndex = 2;
-            this.lbPin.Text = "Contraseña";
+            this.lbPin.Text = "Contraseña:";
             this.lbPin.Click += new System.EventHandler(this.lbPin_Click);
             // 
             // btnGuardar
             // 
             this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGuardar.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnGuardar.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnGuardar.Font = new System.Drawing.Font("Modern No. 20", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.btnGuardar.Location = new System.Drawing.Point(338, 303);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
@@ -229,7 +237,9 @@
             // btnCancelar
             // 
             this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancelar.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnCancelar.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnCancelar.Font = new System.Drawing.Font("Modern No. 20", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.btnCancelar.Location = new System.Drawing.Point(434, 303);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
