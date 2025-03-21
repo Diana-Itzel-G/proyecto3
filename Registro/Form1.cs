@@ -139,6 +139,8 @@ namespace Registro
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
+            AgregarBordeRedondeadoBoton(btnGuardar);
+
             // Aquí puedes agregar el código para cancelar la operación
             this.Close(); // Cierra el formulario actual
         }
@@ -237,6 +239,33 @@ namespace Registro
             {
                 e.Graphics.DrawPath(pen, path);
             }
+        }
+
+        private void panel1_Paint_1(object sender, PaintEventArgs e)
+        {
+            Panel panel = sender as Panel;
+            int radio = 20; // Tamaño del radio de las esquinas redondeadas
+
+            // Crear un gráfico de la ruta del panel
+            GraphicsPath path = new GraphicsPath();
+
+            // Agregar las esquinas redondeadas con base en el tamaño del panel
+            path.AddArc(0, 0, radio, radio, 180, 90); // Esquina superior izquierda
+            path.AddArc(panel.Width - radio, 0, radio, radio, 270, 90); // Esquina superior derecha
+            path.AddArc(panel.Width - radio, panel.Height - radio, radio, radio, 0, 90); // Esquina inferior derecha
+            path.AddArc(0, panel.Height - radio, radio, radio, 90, 90); // Esquina inferior izquierda
+            path.CloseFigure(); // Cierra la figura para formar un contorno cerrado
+
+            // Aplicar la región redondeada al panel
+            panel.Region = new Region(path);
+
+            // Dibujar el borde del panel (opcional)
+            using (Pen pen = new Pen(Color.Gray, 2))
+            {
+                e.Graphics.SmoothingMode = SmoothingMode.AntiAlias; // Mejorar la calidad del dibujo
+                e.Graphics.DrawPath(pen, path); // Dibujar el borde
+            }
+
         }
     }
 }
