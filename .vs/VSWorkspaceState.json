@@ -1,6 +1,11 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Evento",
+    "\\Registro",
+    "\\Registro\\bin\\Debug",
+    "\\Registro\\obj"
   ],
+  "SelectedNode": "\\enfoca-Tec.sln",
   "PreviewInSolutionExplorer": false
 }

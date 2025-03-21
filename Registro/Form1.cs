@@ -134,5 +134,15 @@ namespace Registro
             txtCorreo.BackColor = Color.White;
             txtPin.BackColor = Color.Yellow;
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+            // color tratar mandar cambio
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
