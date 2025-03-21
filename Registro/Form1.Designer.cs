@@ -142,11 +142,11 @@
             // 
             this.lbRegistrarse.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbRegistrarse.AutoSize = true;
-            this.lbRegistrarse.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbRegistrarse.Font = new System.Drawing.Font("MS UI Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbRegistrarse.ForeColor = System.Drawing.SystemColors.Control;
-            this.lbRegistrarse.Location = new System.Drawing.Point(39, 13);
+            this.lbRegistrarse.Location = new System.Drawing.Point(16, 9);
             this.lbRegistrarse.Name = "lbRegistrarse";
-            this.lbRegistrarse.Size = new System.Drawing.Size(91, 20);
+            this.lbRegistrarse.Size = new System.Drawing.Size(150, 27);
             this.lbRegistrarse.TabIndex = 0;
             this.lbRegistrarse.Text = "Registrarse";
             // 
