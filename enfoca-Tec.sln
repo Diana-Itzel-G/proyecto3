@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evento", "Evento\Evento.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "libros", "libros\libros.csproj", "{7755B5B9-FDB6-4C59-970B-6EAB4DA80D92}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "biblioteca", "biblioteca\biblioteca.csproj", "{6C2E2477-4008-489E-B031-365393948D4F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{7755B5B9-FDB6-4C59-970B-6EAB4DA80D92}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7755B5B9-FDB6-4C59-970B-6EAB4DA80D92}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7755B5B9-FDB6-4C59-970B-6EAB4DA80D92}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C2E2477-4008-489E-B031-365393948D4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C2E2477-4008-489E-B031-365393948D4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C2E2477-4008-489E-B031-365393948D4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C2E2477-4008-489E-B031-365393948D4F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
