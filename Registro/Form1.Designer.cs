@@ -150,6 +150,7 @@
             this.lbRegistrarse.Size = new System.Drawing.Size(150, 27);
             this.lbRegistrarse.TabIndex = 0;
             this.lbRegistrarse.Text = "Registrarse";
+            this.lbRegistrarse.Click += new System.EventHandler(this.lbRegistrarse_Click);
             // 
             // lbCliente
             // 

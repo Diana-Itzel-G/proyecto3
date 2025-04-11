@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
 
 
 namespace Registro
@@ -75,6 +76,7 @@ namespace Registro
         {
             AgregarBordeRedondeadoBoton(btnGuardar);
 
+            // Validaciones básicas
             if (string.IsNullOrWhiteSpace(txtClientes.Text))
             {
                 MessageBox.Show("El campo usuario no puede estar vacío.");
@@ -83,13 +85,13 @@ namespace Registro
             }
             if (string.IsNullOrWhiteSpace(txtControl.Text))
             {
-                MessageBox.Show("El campo numero de control no puede estar vacío.");
+                MessageBox.Show("El campo número de control no puede estar vacío.");
                 txtControl.Focus();
                 return;
             }
             if (string.IsNullOrWhiteSpace(txttelefono.Text))
             {
-                MessageBox.Show("El campo telefono no puede estar vacío.");
+                MessageBox.Show("El campo teléfono no puede estar vacío.");
                 txttelefono.Focus();
                 return;
             }
@@ -106,11 +108,31 @@ namespace Registro
                 return;
             }
 
+            // Desactivar botón y mostrar feedback
+            btnGuardar.Enabled = false;
+            btnGuardar.Text = "Guardando...";
 
-            // Si todos los datos son válidos
-            MessageBox.Show("Datos guardados correctamente.");
-            this.Close();
-        
+            // Crear y ejecutar hilo
+
+            Thread hiloGuardar = new Thread(() =>
+            {
+                // Simular operación de guardado lenta (ej. escribir en base de datos)
+                Thread.Sleep(2000); // Simula 2 segundos de proceso
+
+                // Volver al hilo principal (UI) para actualizar controles
+                this.Invoke((MethodInvoker)delegate
+                {
+                    MessageBox.Show("Datos guardados correctamente.");
+
+                    btnGuardar.Enabled = true;
+                    btnGuardar.Text = "Guardar";
+
+                    this.Close();
+                });
+            });
+
+            hiloGuardar.IsBackground = true;
+            hiloGuardar.Start();
         }
 
         private void AgregarBordeRedondeadoBoton(Button button)
@@ -269,6 +291,11 @@ namespace Registro
         }
 
         private void lbControl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbRegistrarse_Click(object sender, EventArgs e)
         {
 
         }
