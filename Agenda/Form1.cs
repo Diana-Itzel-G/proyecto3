@@ -23,30 +23,39 @@ namespace Agenda
             this.CenterToScreen();
         }
 
-        private void Calendario_DateChanged(object sender, DateRangeEventArgs e)
+        private async void Calendario_DateChanged(object sender, DateRangeEventArgs e)
         {
             DateTime fechaSeleccionada = Calendario.SelectionStart;
 
-            // Llamar al método del otro proyecto
-            Eventos1 eventos2 = new Eventos1();
-            eventos2.ManejarFechaSeleccionada(fechaSeleccionada);
-            bool DatosCorrectos = true;
-            if (DatosCorrectos)
+            // Ejecutar en segundo plano con Task.Run
+            await Task.Run(() =>
             {
-                DialogResult result = MessageBox.Show("¿quieres agregar un evento?", "confirmacion",
-                    MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                Eventos1 eventos2 = new Eventos1();
+                eventos2.ManejarFechaSeleccionada(fechaSeleccionada);
 
-                if (result == DialogResult.Yes)
-                {
-                   
-                    eventos2.Show();
-                }
-                else
-                {
-                   
-                }
-            }
+                bool DatosCorrectos = true;
 
+                if (DatosCorrectos)
+                {
+                    // Mostrar el MessageBox en el hilo principal 
+                    DialogResult result = DialogResult.None;
+
+                    Invoke(new Action(() =>
+                    {
+                        result = MessageBox.Show("¿Quieres agregar un evento?", "Confirmación",
+                            MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    }));
+
+                    if (result == DialogResult.Yes)
+                    {
+                        // Mostrar el formulario en el hilo principal
+                        Invoke(new Action(() =>
+                        {
+                            eventos2.Show();
+                        }));
+                    }
+                }
+            });
         }
 
         private void button1_Click(object sender, EventArgs e)
