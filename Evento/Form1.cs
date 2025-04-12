@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -33,8 +34,6 @@ namespace Evento
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-           
-
 
             // Verificar si el campo está vacío
             if (string.IsNullOrWhiteSpace(txtCrear.Text))
@@ -49,16 +48,65 @@ namespace Evento
                 txtNota.Focus();
                 return;
             }
+            // Desactivar botón y mostrar feedback
+            btnAceptar.Enabled = false;
+            btnAceptar.Text = "Guardando...";
 
-            // Si todos los datos son válidos
-            MessageBox.Show("Datos guardados correctamente.");
-             this.Close();
+            // Crear y ejecutar hilo
+
+            Thread hiloAceptar = new Thread(() =>
+            {
+                // Simular operación de guardado lenta (ej. escribir en base de datos)
+                Thread.Sleep(2000); // Simula 2 segundos de proceso
+
+                // Volver al hilo principal (UI) para actualizar controles
+                this.Invoke((MethodInvoker)delegate
+                {
+                    MessageBox.Show("Datos guardados correctamente.");
+
+                    btnAceptar.Enabled = true;
+                    btnAceptar.Text = "Guardar";
+
+                    this.Close();
+                    // Si todos los datos son válidos
+                    //   MessageBox.Show("Datos guardados correctamente.");
+                    //this.Close();
+                });
+            });
+            hiloAceptar.IsBackground = true;
+            hiloAceptar.Start();
         }
 
         private void btnNegar_Click(object sender, EventArgs e)
         {
-            // Aquí puedes agregar el código para cancelar la operación
-            this.Close(); // Cierra el formulario actual
+            // Desactivar botón y mostrar feedback
+            btnNegar.Enabled = false;
+            btnNegar.Text = "Cancelando...";
+
+            // Crear y ejecutar hilo
+
+            Thread hiloNegar = new Thread(() =>
+            {
+                // Simular operación de guardado lenta (ej. escribir en base de datos)
+                Thread.Sleep(500); // Simula 2 segundos de proceso
+
+                // Volver al hilo principal (UI) para actualizar controles
+                this.Invoke((MethodInvoker)delegate
+                {
+                    MessageBox.Show("Operacion Cancelada.");
+
+                    btnNegar.Enabled = true;
+                    btnNegar.Text = "Cancelado";
+
+                    this.Close();
+                    // Si todos los datos son válidos
+                    //   MessageBox.Show("Datos guardados correctamente.");
+                    //this.Close();
+                });
+            });
+            hiloNegar.IsBackground = true;
+            hiloNegar.Start();
+           
         }
 
         private void txtCrear_TextChanged(object sender, EventArgs e)
