@@ -38,3 +38,23 @@ C:\Users\luzes\Source\Repos\proyecto3\iniciarSesion\obj\Debug\iniciarSesion.cspr
 C:\Users\luzes\Source\Repos\proyecto3\iniciarSesion\obj\Debug\iniciarS.906C8C6F.Up2Date
 C:\Users\luzes\Source\Repos\proyecto3\iniciarSesion\obj\Debug\iniciarSesion.exe
 C:\Users\luzes\Source\Repos\proyecto3\iniciarSesion\obj\Debug\iniciarSesion.pdb
+C:\Users\Usuario 0\Source\Repos\proyecto3\proyecto3\iniciarSesion\obj\Debug\iniciarSesion.csproj.AssemblyReference.cache
+C:\Users\Usuario 0\Source\Repos\proyecto3\proyecto3\iniciarSesion\obj\Debug\iniciarSesion.IniciarSesion.resources
+C:\Users\Usuario 0\Source\Repos\proyecto3\proyecto3\iniciarSesion\obj\Debug\iniciarSesion.Properties.Resources.resources
+C:\Users\Usuario 0\Source\Repos\proyecto3\proyecto3\iniciarSesion\obj\Debug\iniciarSesion.csproj.GenerateResource.cache
+C:\Users\Usuario 0\Source\Repos\proyecto3\proyecto3\iniciarSesion\obj\Debug\iniciarSesion.csproj.CoreCompileInputs.cache
+C:\Users\Usuario 0\Source\Repos\proyecto3\proyecto3\iniciarSesion\obj\Debug\iniciarSesion.exe
+C:\Users\Usuario 0\Source\Repos\proyecto3\proyecto3\iniciarSesion\obj\Debug\iniciarSesion.pdb
+C:\Users\Usuario 0\Source\Repos\proyecto3\proyecto3\iniciarSesion\bin\Debug\iniciarSesion.exe.config
+C:\Users\Usuario 0\Source\Repos\proyecto3\proyecto3\iniciarSesion\bin\Debug\iniciarSesion.exe
+C:\Users\Usuario 0\Source\Repos\proyecto3\proyecto3\iniciarSesion\bin\Debug\iniciarSesion.pdb
+C:\Users\Usuario 0\Source\Repos\proyecto3\proyecto3\iniciarSesion\bin\Debug\Agenda.exe
+C:\Users\Usuario 0\Source\Repos\proyecto3\proyecto3\iniciarSesion\bin\Debug\Registro.exe
+C:\Users\Usuario 0\Source\Repos\proyecto3\proyecto3\iniciarSesion\bin\Debug\Evento.exe
+C:\Users\Usuario 0\Source\Repos\proyecto3\proyecto3\iniciarSesion\bin\Debug\Agenda.pdb
+C:\Users\Usuario 0\Source\Repos\proyecto3\proyecto3\iniciarSesion\bin\Debug\Agenda.exe.config
+C:\Users\Usuario 0\Source\Repos\proyecto3\proyecto3\iniciarSesion\bin\Debug\Registro.pdb
+C:\Users\Usuario 0\Source\Repos\proyecto3\proyecto3\iniciarSesion\bin\Debug\Registro.exe.config
+C:\Users\Usuario 0\Source\Repos\proyecto3\proyecto3\iniciarSesion\bin\Debug\Evento.pdb
+C:\Users\Usuario 0\Source\Repos\proyecto3\proyecto3\iniciarSesion\bin\Debug\Evento.exe.config
+C:\Users\Usuario 0\Source\Repos\proyecto3\proyecto3\iniciarSesion\obj\Debug\iniciarSesion.csproj.CopyComplete

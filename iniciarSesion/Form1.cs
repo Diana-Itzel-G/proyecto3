@@ -15,11 +15,12 @@ namespace iniciarSesion
 {
     public partial class IniciarSesion : Form
     {
-        private Timer resetColorTimer;
+        private System.Windows.Forms.Timer resetColorTimer; //uso de Timer de Windows Forms
         public IniciarSesion()
         {
             InitializeComponent();
             txtUsuario.TextChanged += txtUsuario_TextChanged;
+            txtContraseña.TextChanged += txtContraseña_TextChanged; //añadir evento
         }
       
 
@@ -48,25 +49,23 @@ namespace iniciarSesion
                 MessageBox.Show("El campo usuario no puede estar vacío.");
                 txtUsuario.Focus();
                 return;
-            }
-            // Crear un nuevo hilo para simular validación de usuario
-            Thread validarUsuarioThread = new Thread(() =>
-            {
-                // Simular espera como si se estuviera consultando una base de datos
-                Thread.Sleep(2000); // 2 segundos de espera
+                }
+            btnSesion.Enabled = false; //Deshabilitar botón mientras se procesa
 
-                // Abrir el formulario de Agenda desde el hilo principal (UI)
+            Task.Run(() =>
+            {
+                Thread.Sleep(2000); // Simulación de consulta a BD
+
                 this.Invoke((MethodInvoker)delegate
                 {
-            FechaAct agenda1 = new FechaAct();
-            agenda1.Show();
-                     });
+                    FechaAct agenda1 = new FechaAct();
+                    agenda1.Show();
+                    btnSesion.Enabled = true; // Rehabilitar botón al finalizar
+                });
             });
-
-            validarUsuarioThread.Start(); // Iniciar hilo
-            
         }
 
+    
         private void txtUsuario_TextChanged(object sender, EventArgs e)
         {
             txtUsuario.BackColor = Color.Yellow;

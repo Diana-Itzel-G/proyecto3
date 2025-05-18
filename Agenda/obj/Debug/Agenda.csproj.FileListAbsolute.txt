@@ -26,3 +26,17 @@ C:\Users\luzes\Source\Repos\proyecto3\Agenda\obj\Debug\Agenda.csproj.CoreCompile
 C:\Users\luzes\Source\Repos\proyecto3\Agenda\obj\Debug\Agenda.csproj.Up2Date
 C:\Users\luzes\Source\Repos\proyecto3\Agenda\obj\Debug\Agenda.exe
 C:\Users\luzes\Source\Repos\proyecto3\Agenda\obj\Debug\Agenda.pdb
+C:\Users\Usuario 0\Source\Repos\proyecto3\proyecto3\Agenda\bin\Debug\Agenda.exe.config
+C:\Users\Usuario 0\Source\Repos\proyecto3\proyecto3\Agenda\bin\Debug\Agenda.exe
+C:\Users\Usuario 0\Source\Repos\proyecto3\proyecto3\Agenda\bin\Debug\Agenda.pdb
+C:\Users\Usuario 0\Source\Repos\proyecto3\proyecto3\Agenda\bin\Debug\Evento.exe
+C:\Users\Usuario 0\Source\Repos\proyecto3\proyecto3\Agenda\bin\Debug\Evento.pdb
+C:\Users\Usuario 0\Source\Repos\proyecto3\proyecto3\Agenda\bin\Debug\Evento.exe.config
+C:\Users\Usuario 0\Source\Repos\proyecto3\proyecto3\Agenda\obj\Debug\Agenda.csproj.AssemblyReference.cache
+C:\Users\Usuario 0\Source\Repos\proyecto3\proyecto3\Agenda\obj\Debug\Agenda.FechaAct.resources
+C:\Users\Usuario 0\Source\Repos\proyecto3\proyecto3\Agenda\obj\Debug\Agenda.Properties.Resources.resources
+C:\Users\Usuario 0\Source\Repos\proyecto3\proyecto3\Agenda\obj\Debug\Agenda.csproj.GenerateResource.cache
+C:\Users\Usuario 0\Source\Repos\proyecto3\proyecto3\Agenda\obj\Debug\Agenda.csproj.CoreCompileInputs.cache
+C:\Users\Usuario 0\Source\Repos\proyecto3\proyecto3\Agenda\obj\Debug\Agenda.csproj.CopyComplete
+C:\Users\Usuario 0\Source\Repos\proyecto3\proyecto3\Agenda\obj\Debug\Agenda.exe
+C:\Users\Usuario 0\Source\Repos\proyecto3\proyecto3\Agenda\obj\Debug\Agenda.pdb
