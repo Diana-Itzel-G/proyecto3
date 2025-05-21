@@ -6,44 +6,44 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CRUD.BD
+namespace BD  // Coincide con tu carpeta BD en el proyecto
 {
-    public class ConexionMySql : Conexion
+    public class ConexionMySql
     {
         private MySqlConnection conexion;
         private string cadenaConexion;
 
+        // Configura tus datos de conexión aquí
+        private string database = "enfocatec";
+        private string server = "localhost";
+        private string user = "root";
+        private string password = "";  // Si tienes contraseña, colócala aquí
 
         public ConexionMySql()
         {
-            cadenaConexion = "Database=" + database +
-                "; DataSource=" + server +
-                "; User Id= " + user +
-                "; Password=" + password;
+            cadenaConexion = $"Server={server};Database={database};Uid={user};Pwd={password};";
             conexion = new MySqlConnection(cadenaConexion);
         }
 
-        public MySqlConnection getConexion()
+        public MySqlConnection AbrirConexion()
         {
             try
             {
                 if (conexion.State != System.Data.ConnectionState.Open)
-                {
                     conexion.Open();
-                }
-                
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                MessageBox.Show(e.ToString());
+                MessageBox.Show("Error al conectar a la base de datos: " + ex.Message);
             }
 
             return conexion;
         }
 
-        public void closeConexion()
+        public void CerrarConexion()
         {
-            conexion.Close();
+            if (conexion.State == System.Data.ConnectionState.Open)
+                conexion.Close();
         }
     }
 }
