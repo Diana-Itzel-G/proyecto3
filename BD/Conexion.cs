@@ -9,7 +9,7 @@ namespace CRUD.BD
     public class Conexion
     {
         protected string server = "localhost";
-        protected string database = "productos";
+        protected string database = "enfocatec";
         protected string user = "root";
         protected string password = "";
     }
