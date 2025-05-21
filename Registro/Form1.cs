@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
+using System.Data.SqlClient;
 
 
 namespace Registro
@@ -72,6 +73,7 @@ namespace Registro
             btnGuardar.BackColor = Color.White;
         }
 
+        using BD;
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             AgregarBordeRedondeadoBoton(btnGuardar);
@@ -103,7 +105,7 @@ namespace Registro
             }
             if (string.IsNullOrWhiteSpace(txtPin.Text))
             {
-                MessageBox.Show("El campo contraseña no puede estar vacío.");
+                MessageBox.Show("El campo contraseña no puede estar vacía.");
                 txtPin.Focus();
                 return;
             }
@@ -112,23 +114,44 @@ namespace Registro
             btnGuardar.Enabled = false;
             btnGuardar.Text = "Guardando...";
 
-            // Crear y ejecutar hilo
-
             Thread hiloGuardar = new Thread(() =>
             {
-                // Simular operación de guardado lenta (ej. escribir en base de datos)
-                Thread.Sleep(2000); // Simula 2 segundos de proceso
-
-                // Volver al hilo principal (UI) para actualizar controles
-                this.Invoke((MethodInvoker)delegate
+                try
                 {
-                    MessageBox.Show("Datos guardados correctamente.");
+                    ConexionMySql conexionBD = new ConexionMySql();
+                    var conexion = conexionBD.AbrirConexion();
 
-                    btnGuardar.Enabled = true;
-                    btnGuardar.Text = "Guardar";
+                    string query = "INSERT INTO usuarios (usuario, numero_control, telefono, correo, contraseña) VALUES (@usuario, @control, @telefono, @correo, @contraseña)";
+                    using (MySqlCommand cmd = new MySqlCommand(query, conexion))
+                    {
+                        cmd.Parameters.AddWithValue("@usuario", txtClientes.Text.Trim());
+                        cmd.Parameters.AddWithValue("@control", txtControl.Text.Trim());
+                        cmd.Parameters.AddWithValue("@telefono", txttelefono.Text.Trim());
+                        cmd.Parameters.AddWithValue("@correo", txtCorreo.Text.Trim());
+                        cmd.Parameters.AddWithValue("@contraseña", txtPin.Text.Trim());
 
-                    this.Close();
-                });
+                        cmd.ExecuteNonQuery();
+                    }
+
+                    conexionBD.CerrarConexion();
+
+                    this.Invoke((MethodInvoker)delegate
+                    {
+                        MessageBox.Show("Usuario registrado correctamente.");
+                        btnGuardar.Enabled = true;
+                        btnGuardar.Text = "Guardar";
+                        this.Close();
+                    });
+                }
+                catch (Exception ex)
+                {
+                    this.Invoke((MethodInvoker)delegate
+                    {
+                        MessageBox.Show("Error al guardar: " + ex.Message);
+                        btnGuardar.Enabled = true;
+                        btnGuardar.Text = "Guardar";
+                    });
+                }
             });
 
             hiloGuardar.IsBackground = true;
