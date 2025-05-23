@@ -40,3 +40,17 @@ C:\Users\Usuario 0\Source\Repos\proyecto3\proyecto3\Agenda\obj\Debug\Agenda.cspr
 C:\Users\Usuario 0\Source\Repos\proyecto3\proyecto3\Agenda\obj\Debug\Agenda.csproj.CopyComplete
 C:\Users\Usuario 0\Source\Repos\proyecto3\proyecto3\Agenda\obj\Debug\Agenda.exe
 C:\Users\Usuario 0\Source\Repos\proyecto3\proyecto3\Agenda\obj\Debug\Agenda.pdb
+C:\Users\Adair\Documents\TopicosProyecto3\proyecto3\Agenda\bin\Debug\Agenda.exe.config
+C:\Users\Adair\Documents\TopicosProyecto3\proyecto3\Agenda\bin\Debug\Agenda.exe
+C:\Users\Adair\Documents\TopicosProyecto3\proyecto3\Agenda\bin\Debug\Agenda.pdb
+C:\Users\Adair\Documents\TopicosProyecto3\proyecto3\Agenda\bin\Debug\Evento.exe
+C:\Users\Adair\Documents\TopicosProyecto3\proyecto3\Agenda\bin\Debug\Evento.pdb
+C:\Users\Adair\Documents\TopicosProyecto3\proyecto3\Agenda\bin\Debug\Evento.exe.config
+C:\Users\Adair\Documents\TopicosProyecto3\proyecto3\Agenda\obj\Debug\Agenda.csproj.AssemblyReference.cache
+C:\Users\Adair\Documents\TopicosProyecto3\proyecto3\Agenda\obj\Debug\Agenda.FechaAct.resources
+C:\Users\Adair\Documents\TopicosProyecto3\proyecto3\Agenda\obj\Debug\Agenda.Properties.Resources.resources
+C:\Users\Adair\Documents\TopicosProyecto3\proyecto3\Agenda\obj\Debug\Agenda.csproj.GenerateResource.cache
+C:\Users\Adair\Documents\TopicosProyecto3\proyecto3\Agenda\obj\Debug\Agenda.csproj.CoreCompileInputs.cache
+C:\Users\Adair\Documents\TopicosProyecto3\proyecto3\Agenda\obj\Debug\Agenda.csproj.Up2Date
+C:\Users\Adair\Documents\TopicosProyecto3\proyecto3\Agenda\obj\Debug\Agenda.exe
+C:\Users\Adair\Documents\TopicosProyecto3\proyecto3\Agenda\obj\Debug\Agenda.pdb

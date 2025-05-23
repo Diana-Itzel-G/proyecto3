@@ -28,3 +28,13 @@ C:\Users\luzes\Source\Repos\proyecto3\Registro\obj\Debug\Registro.csproj.Generat
 C:\Users\luzes\Source\Repos\proyecto3\Registro\obj\Debug\Registro.csproj.CoreCompileInputs.cache
 C:\Users\luzes\Source\Repos\proyecto3\Registro\obj\Debug\Registro.exe
 C:\Users\luzes\Source\Repos\proyecto3\Registro\obj\Debug\Registro.pdb
+C:\Users\Adair\Documents\TopicosProyecto3\proyecto3\Registro\bin\Debug\Registro.exe.config
+C:\Users\Adair\Documents\TopicosProyecto3\proyecto3\Registro\bin\Debug\Registro.exe
+C:\Users\Adair\Documents\TopicosProyecto3\proyecto3\Registro\bin\Debug\Registro.pdb
+C:\Users\Adair\Documents\TopicosProyecto3\proyecto3\Registro\obj\Debug\Registro.csproj.AssemblyReference.cache
+C:\Users\Adair\Documents\TopicosProyecto3\proyecto3\Registro\obj\Debug\Registro.Registrarse.resources
+C:\Users\Adair\Documents\TopicosProyecto3\proyecto3\Registro\obj\Debug\Registro.Properties.Resources.resources
+C:\Users\Adair\Documents\TopicosProyecto3\proyecto3\Registro\obj\Debug\Registro.csproj.GenerateResource.cache
+C:\Users\Adair\Documents\TopicosProyecto3\proyecto3\Registro\obj\Debug\Registro.csproj.CoreCompileInputs.cache
+C:\Users\Adair\Documents\TopicosProyecto3\proyecto3\Registro\obj\Debug\Registro.exe
+C:\Users\Adair\Documents\TopicosProyecto3\proyecto3\Registro\obj\Debug\Registro.pdb
