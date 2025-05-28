@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
 using System.Data.SqlClient;
+using BD;
 
 
 namespace Registro
@@ -74,10 +75,11 @@ namespace Registro
         }
 
         using BD;
-        private void btnGuardar_Click(object sender, EventArgs e)
+        private void btnGuardar_Click(object sender, EventArgs e) /////////////////////////////////////////////////777
         {
         AgregarBordeRedondeadoBoton(btnGuardar);
 
+        // Validar campos vacíos
         if (string.IsNullOrWhiteSpace(txtClientes.Text) ||
             string.IsNullOrWhiteSpace(txtControl.Text) ||
             string.IsNullOrWhiteSpace(txttelefono.Text) ||
@@ -88,6 +90,7 @@ namespace Registro
             return;
         }
 
+        // Desactivar botón y mostrar estado
         btnGuardar.Enabled = false;
         btnGuardar.Text = "Guardando...";
 
@@ -115,16 +118,28 @@ namespace Registro
 
                 conexionBD.CerrarConexion();
 
+                // Actualizar UI desde el hilo principal
                 this.Invoke((MethodInvoker)delegate
                 {
                     MessageBox.Show("Usuario registrado correctamente.");
+
+                    // Limpiar campos después del guardado
+                    txtClientes.Clear();
+                    txtControl.Clear();
+                    txttelefono.Clear();
+                    txtCorreo.Clear();
+                    txtPin.Clear();
+
                     btnGuardar.Enabled = true;
                     btnGuardar.Text = "Guardar";
-                    this.Close();
+
+                    // Puedes cerrar el formulario si lo deseas
+                    // this.Close();
                 });
             }
             catch (Exception ex)
             {
+                // Mostrar mensaje de error en el hilo principal
                 this.Invoke((MethodInvoker)delegate
                 {
                     MessageBox.Show("Error al guardar: " + ex.Message);
@@ -134,7 +149,11 @@ namespace Registro
             }
         });
 
+        hiloGuardar.IsBackground = true;
         hiloGuardar.Start();
+    }
+
+    hiloGuardar.Start();
     }
 
         private void AgregarBordeRedondeadoBoton(Button button)

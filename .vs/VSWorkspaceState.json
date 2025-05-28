@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Registro"
   ],
-  "SelectedNode": "\\enfoca-Tec.sln",
+  "SelectedNode": "\\Registro\\Program.cs",
   "PreviewInSolutionExplorer": false
 }
