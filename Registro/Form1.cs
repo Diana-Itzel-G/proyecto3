@@ -74,111 +74,76 @@ namespace Registro
             btnGuardar.BackColor = Color.White;
         }
 
-        using BD;
-        private void btnGuardar_Click(object sender, EventArgs e) /////////////////////////////////////////////////777
+        private void btnGuardar_Click(object sender, EventArgs e)
         {
-        AgregarBordeRedondeadoBoton(btnGuardar);
+            AgregarBordeRedondeadoBoton(btnGuardar);
 
-        // Validar campos vacíos
-        if (string.IsNullOrWhiteSpace(txtClientes.Text) ||
-            string.IsNullOrWhiteSpace(txtControl.Text) ||
-            string.IsNullOrWhiteSpace(txttelefono.Text) ||
-            string.IsNullOrWhiteSpace(txtCorreo.Text) ||
-            string.IsNullOrWhiteSpace(txtPin.Text))
-        {
-            MessageBox.Show("Todos los campos son obligatorios.");
-            return;
+            if (string.IsNullOrWhiteSpace(txtClientes.Text) ||
+                string.IsNullOrWhiteSpace(txtControl.Text) ||
+                string.IsNullOrWhiteSpace(txttelefono.Text) ||
+                string.IsNullOrWhiteSpace(txtCorreo.Text) ||
+                string.IsNullOrWhiteSpace(txtPin.Text))
+            {
+                MessageBox.Show("Todos los campos son obligatorios.");
+                return;
+            }
+
+            btnGuardar.Enabled = false;
+            btnGuardar.Text = "Guardando...";
+
+            Thread hiloGuardar = new Thread(() =>
+            {
+                try
+                {
+                    ConexionMySql conexionBD = new ConexionMySql();
+                    var conexion = conexionBD.AbrirConexion();
+
+                    string passwordHasheada = ConexionMySql.HashPassword(txtPin.Text.Trim());
+
+                    string query = "INSERT INTO usuarios (usuario, numero_control, telefono, correo, contraseña) " +
+                                   "VALUES (@usuario, @control, @telefono, @correo, @contraseña)";
+                    using (MySqlCommand cmd = new MySqlCommand(query, conexion))
+                    {
+                        cmd.Parameters.AddWithValue("@usuario", txtClientes.Text.Trim());
+                        cmd.Parameters.AddWithValue("@control", txtControl.Text.Trim());
+                        cmd.Parameters.AddWithValue("@telefono", txttelefono.Text.Trim());
+                        cmd.Parameters.AddWithValue("@correo", txtCorreo.Text.Trim());
+                        cmd.Parameters.AddWithValue("@contraseña", passwordHasheada);
+
+                        cmd.ExecuteNonQuery();
+                    }
+
+                    conexionBD.CerrarConexion();
+
+                    this.Invoke((MethodInvoker)delegate
+                    {
+                        MessageBox.Show("Usuario registrado correctamente.");
+
+                        txtClientes.Clear();
+                        txtControl.Clear();
+                        txttelefono.Clear();
+                        txtCorreo.Clear();
+                        txtPin.Clear();
+
+                        btnGuardar.Enabled = true;
+                        btnGuardar.Text = "Guardar";
+                    });
+                }
+                catch (Exception ex)
+                {
+                    this.Invoke((MethodInvoker)delegate
+                    {
+                        MessageBox.Show("Error al guardar: " + ex.Message);
+                        btnGuardar.Enabled = true;
+                        btnGuardar.Text = "Guardar";
+                    });
+                }
+            });
+
+            hiloGuardar.IsBackground = true;
+            hiloGuardar.Start(); 
         }
 
-        // Desactivar botón y mostrar estado
-        btnGuardar.Enabled = false;
-        btnGuardar.Text = "Guardando...";
-
-        Thread hiloGuardar = new Thread(() =>
-        {
-            try
-            {
-                ConexionMySql conexionBD = new ConexionMySql();
-                var conexion = conexionBD.AbrirConexion();
-
-                string passwordHasheada = ConexionMySql.HashPassword(txtPin.Text.Trim());
-
-                string query = "INSERT INTO usuarios (usuario, numero_control, telefono, correo, contraseña) " +
-                               "VALUES (@usuario, @control, @telefono, @correo, @contraseña)";
-                using (MySqlCommand cmd = new MySqlCommand(query, conexion))
-                {
-                    cmd.Parameters.AddWithValue("@usuario", txtClientes.Text.Trim());
-                    cmd.Parameters.AddWithValue("@control", txtControl.Text.Trim());
-                    cmd.Parameters.AddWithValue("@telefono", txttelefono.Text.Trim());
-                    cmd.Parameters.AddWithValue("@correo", txtCorreo.Text.Trim());
-                    cmd.Parameters.AddWithValue("@contraseña", passwordHasheada);
-
-                    cmd.ExecuteNonQuery();
-                }
-
-                conexionBD.CerrarConexion();
-
-                // Actualizar UI desde el hilo principal
-                this.Invoke((MethodInvoker)delegate
-                {
-                    MessageBox.Show("Usuario registrado correctamente.");
-
-                    // Limpiar campos después del guardado
-                    txtClientes.Clear();
-                    txtControl.Clear();
-                    txttelefono.Clear();
-                    txtCorreo.Clear();
-                    txtPin.Clear();
-
-                    btnGuardar.Enabled = true;
-                    btnGuardar.Text = "Guardar";
-
-                    // Puedes cerrar el formulario si lo deseas
-                    // this.Close();
-                });
-            }
-            catch (Exception ex)
-            {
-                // Mostrar mensaje de error en el hilo principal
-                this.Invoke((MethodInvoker)delegate
-                {
-                    MessageBox.Show("Error al guardar: " + ex.Message);
-                    btnGuardar.Enabled = true;
-                    btnGuardar.Text = "Guardar";
-                });
-            }
-        });
-
-        hiloGuardar.IsBackground = true;
-        hiloGuardar.Start();
-    }
-
-    hiloGuardar.Start();
-    }
-
-        private void AgregarBordeRedondeadoBoton(Button button)
-        {
-            button.FlatStyle = FlatStyle.Flat;
-            button.FlatAppearance.BorderSize = 0; // Eliminar el borde predeterminado
-            button.Paint += (s, e) =>
-            {
-                int radio = 20; // Tamaño de las esquinas redondeadas
-                GraphicsPath path = new GraphicsPath();
-                path.AddArc(0, 0, radio, radio, 180, 90);
-                path.AddArc(button.Width - radio, 0, radio, radio, 270, 90);
-                path.AddArc(button.Width - radio, button.Height - radio, radio, radio, 0, 90);
-                path.AddArc(0, button.Height - radio, radio, radio, 90, 90);
-                path.CloseFigure();
-
-                button.Region = new Region(path);
-
-                using (Pen pen = new Pen(Color.Gray, 2))
-                {
-                    e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
-                    e.Graphics.DrawPath(pen, path);
-                }
-            };
-        }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
