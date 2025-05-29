@@ -17,9 +17,10 @@ using System.Security.Cryptography;
                 string servidor = "localhost";
                 string baseDatos = "enfocatec";
                 string usuario = "root";
-                string contraseña = " "; // Aquí NO debes poner la contraseña hasheada
+               string port = "";
+                string contraseña = ""; // Aquí NO debes poner la contraseña hasheada
 
-                string cadenaConexion = $"server={servidor};database={baseDatos};uid={usuario};pwd={contraseña};";
+                string cadenaConexion = $"server={servidor};database={baseDatos};uid={usuario};pwd={contraseña};port={port};";
 
                 conexion = new MySqlConnection(cadenaConexion);
             }

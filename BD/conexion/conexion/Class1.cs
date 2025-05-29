@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,12 +14,13 @@ namespace conexion
         private string database = "enfocatec";
         private string user = "root";
         private string password = "";
+        private string port = "3307";
         private string cadenaConexion;
         private MySqlConnection conexion;
 
         public Conexion()
         {
-            cadenaConexion = $"Server={server};Database={database};Uid={user};Pwd={password};";
+            cadenaConexion = $"Server={server};Database={database};Uid={user};Pwd={password};port={port}";
             conexion = new MySqlConnection(cadenaConexion);
         }
 

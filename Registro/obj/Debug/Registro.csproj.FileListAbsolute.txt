@@ -45,3 +45,10 @@ C:\Users\Usuario\source\repos\Consola\proyecto3\Registro\obj\Debug\Registro.cspr
 C:\Users\Usuario\source\repos\Consola\proyecto3\Registro\obj\Debug\Registro.csproj.CoreCompileInputs.cache
 C:\Users\Usuario\source\repos\Consola\proyecto3\Registro\obj\Debug\Registro.exe
 C:\Users\Usuario\source\repos\Consola\proyecto3\Registro\obj\Debug\Registro.pdb
+C:\Users\luzes\Source\Repos\proyecto3\Registro\bin\Debug\ConexionMySql.dll
+C:\Users\luzes\Source\Repos\proyecto3\Registro\bin\Debug\System.Memory.dll
+C:\Users\luzes\Source\Repos\proyecto3\Registro\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\luzes\Source\Repos\proyecto3\Registro\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\luzes\Source\Repos\proyecto3\Registro\bin\Debug\System.Buffers.dll
+C:\Users\luzes\Source\Repos\proyecto3\Registro\bin\Debug\ConexionMySql.pdb
+C:\Users\luzes\Source\Repos\proyecto3\Registro\obj\Debug\Registro.csproj.Up2Date

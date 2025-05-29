@@ -9,6 +9,8 @@ using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
+using BD;
 
 
 namespace Evento
@@ -34,47 +36,73 @@ namespace Evento
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
+            //AgregarBordeRedondeadoBoton(btnGuardar);
 
-            // Verificar si el campo está vacío
-            if (string.IsNullOrWhiteSpace(txtCrear.Text))
+            if (string.IsNullOrWhiteSpace(txtidevento.Text) ||
+                string.IsNullOrWhiteSpace(txtdia.Text) ||
+                string.IsNullOrWhiteSpace(txtCrear.Text) ||
+                string.IsNullOrWhiteSpace(txtNota.Text)
+               )
             {
-                MessageBox.Show("El campo crear evento no puede estar vacío.");
-                txtCrear.Focus();
+                MessageBox.Show("Todos los campos son obligatorios.");
                 return;
             }
-            if (string.IsNullOrWhiteSpace(txtNota.Text))
-            {
-                MessageBox.Show("El campo nota(s) no puede estar vacío.");
-                txtNota.Focus();
-                return;
-            }
-            // Desactivar botón y mostrar feedback
+
             btnAceptar.Enabled = false;
             btnAceptar.Text = "Guardando...";
 
-            // Crear y ejecutar hilo
-
-            Thread hiloAceptar = new Thread(() =>
+            Thread hiloGuardar = new Thread(() =>
             {
-                // Simular operación de guardado lenta (ej. escribir en base de datos)
-                Thread.Sleep(2000); // Simula 2 segundos de proceso
-
-                // Volver al hilo principal (UI) para actualizar controles
-                this.Invoke((MethodInvoker)delegate
+                try
                 {
-                    MessageBox.Show("Datos guardados correctamente.");
+                    ConexionMySql conexionBD = new ConexionMySql();
+                    var conexion = new ConexionMySql();
+                    conexion.AbrirConexion();
 
-                    btnAceptar.Enabled = true;
-                    btnAceptar.Text = "Guardar";
+                    string passwordHasheada = ConexionMySql.HashPassword(txtNota.Text.Trim());
 
-                    this.Close();
-                    // Si todos los datos son válidos
-                    //   MessageBox.Show("Datos guardados correctamente.");
-                    //this.Close();
-                });
+                    string query = "INSERT INTO eventos (ideventos, dia, evento, notas) " +
+                                   "VALUES (@ideventos, @dia, @evento, @notas)";
+                    using (MySqlCommand cmd = new MySqlCommand(query, conexion.AbrirConexion()))
+                    {
+                        cmd.Parameters.AddWithValue("@ideventos", txtidevento.Text.Trim());
+                        cmd.Parameters.AddWithValue("@dia", txtdia.Text.Trim());
+                        cmd.Parameters.AddWithValue("@evento", txtCrear.Text.Trim());
+                        cmd.Parameters.AddWithValue("@notas", txtNota.Text.Trim());
+                       // cmd.Parameters.AddWithValue("@contraseña", passwordHasheada);
+
+                        cmd.ExecuteNonQuery();
+                    }
+
+                    conexionBD.CerrarConexion();
+
+                    this.Invoke((MethodInvoker)delegate
+                    {
+                        MessageBox.Show("Usuario registrado correctamente.");
+
+                        txtidevento.Clear();
+                        txtdia.Clear();
+                        txtCrear.Clear();
+                        txtNota.Clear();
+
+                        btnAceptar.Enabled = true;
+                        btnAceptar.Text = "Guardar";
+                    });
+                }
+                catch (Exception ex)
+                {
+                    this.Invoke((MethodInvoker)delegate
+                    {
+                        MessageBox.Show("Error al guardar: " + ex.Message);
+                        btnAceptar.Enabled = true;
+                        btnAceptar.Text = "Guardar";
+                    });
+                }
             });
-            hiloAceptar.IsBackground = true;
-            hiloAceptar.Start();
+
+            hiloGuardar.IsBackground = true;
+            hiloGuardar.Start();
+
         }
 
         private void btnNegar_Click(object sender, EventArgs e)
@@ -113,6 +141,8 @@ namespace Evento
         {
             txtCrear.BackColor = Color.Yellow;
             txtNota.BackColor = Color.White;
+            txtdia.BackColor = Color.White;
+            txtidevento.BackColor = Color.White;
         }
 
         private void Eventos1_Load(object sender, EventArgs e)
@@ -124,6 +154,8 @@ namespace Evento
         {
             txtNota.BackColor = Color.Yellow;
             txtCrear.BackColor = Color.White;
+            txtdia.BackColor = Color.White;
+            txtidevento.BackColor = Color.White;
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
@@ -143,7 +175,23 @@ namespace Evento
 
         private void lbEventos_Click(object sender, EventArgs e)
         {
+            
+        }
 
+        private void txtdia_TextChanged(object sender, EventArgs e)
+        {
+            txtCrear.BackColor = Color.White;
+            txtNota.BackColor = Color.White;
+            txtdia.BackColor = Color.Yellow;
+            txtidevento.BackColor = Color.White;
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            txtCrear.BackColor = Color.White;
+            txtNota.BackColor = Color.White;
+            txtdia.BackColor = Color.White;
+            txtidevento.BackColor = Color.Yellow;
         }
     }
 }

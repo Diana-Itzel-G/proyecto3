@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
-using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 using BD;
 
 
@@ -76,7 +76,7 @@ namespace Registro
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            AgregarBordeRedondeadoBoton(btnGuardar);
+            //AgregarBordeRedondeadoBoton(btnGuardar);
 
             if (string.IsNullOrWhiteSpace(txtClientes.Text) ||
                 string.IsNullOrWhiteSpace(txtControl.Text) ||
@@ -96,13 +96,14 @@ namespace Registro
                 try
                 {
                     ConexionMySql conexionBD = new ConexionMySql();
-                    var conexion = conexionBD.AbrirConexion();
+                    var conexion = new ConexionMySql();
+                    conexion.AbrirConexion();
 
                     string passwordHasheada = ConexionMySql.HashPassword(txtPin.Text.Trim());
 
                     string query = "INSERT INTO usuarios (usuario, numero_control, telefono, correo, contraseña) " +
                                    "VALUES (@usuario, @control, @telefono, @correo, @contraseña)";
-                    using (MySqlCommand cmd = new MySqlCommand(query, conexion))
+                    using (MySqlCommand cmd = new MySqlCommand(query, conexion.AbrirConexion()))
                     {
                         cmd.Parameters.AddWithValue("@usuario", txtClientes.Text.Trim());
                         cmd.Parameters.AddWithValue("@control", txtControl.Text.Trim());
@@ -147,7 +148,7 @@ namespace Registro
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            AgregarBordeRedondeadoBoton(btnCancelar);
+           // AgregarBordeRedondeadoBoton(btnCancelar);
 
             // Aquí puedes agregar el código para cancelar la operación
             this.Close(); // Cierra el formulario actual
