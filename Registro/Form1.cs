@@ -95,15 +95,12 @@ namespace Registro
             {
                 try
                 {
-                    ConexionMySql conexionBD = new ConexionMySql();
-                    var conexion = new ConexionMySql();
-                    conexion.AbrirConexion();
-
+                    MySqlConnection conn = conexionBD.AbrirConexion();
                     string passwordHasheada = ConexionMySql.HashPassword(txtPin.Text.Trim());
 
                     string query = "INSERT INTO usuarios (usuario, numero_control, telefono, correo, contraseña) " +
                                    "VALUES (@usuario, @control, @telefono, @correo, @contraseña)";
-                    using (MySqlCommand cmd = new MySqlCommand(query, conexion.AbrirConexion()))
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@usuario", txtClientes.Text.Trim());
                         cmd.Parameters.AddWithValue("@control", txtControl.Text.Trim());
